@@ -1,5 +1,5 @@
 resource "aws_sns_topic_policy" "allow_publish" {
-  arn = aws_sns_topic.sns_fiap_x.arn
+  arn = aws_sns_topic.fiap_x_topic.arn
 
   policy = jsonencode({
     Version   = "2012-10-17"
@@ -10,7 +10,7 @@ resource "aws_sns_topic_policy" "allow_publish" {
           AWS = "*"
         }
         Action    = "sns:Publish"
-        Resource  = aws_sns_topic.sns_fiap_x.arn
+        Resource  = aws_sns_topic.fiap_x_topic.arn
         Condition = {
           ArnLike = {
             "aws:SourceArn" = "arn:aws:ecs:us-east-1:448628038787:*"

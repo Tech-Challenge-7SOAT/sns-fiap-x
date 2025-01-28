@@ -1,3 +1,3 @@
-resource "aws_sns_topic" "sns_fiap_x" {
+resource "aws_sns_topic" "fiap_x_topic" {
   name = "fiap-x-topic"
 }
